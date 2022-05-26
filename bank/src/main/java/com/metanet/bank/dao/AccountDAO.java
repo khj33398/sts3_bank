@@ -3,6 +3,7 @@ package com.metanet.bank.dao;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.metanet.bank.dto.Account;
@@ -18,4 +19,6 @@ public interface AccountDAO {
 	public void insertOne(Account acc) throws Exception;
 	
 	public void updateBalance(Account acc) throws Exception;
+
+	public void deposit(@Param("id") String id, @Param("money") int money);
 }
